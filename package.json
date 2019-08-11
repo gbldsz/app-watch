@@ -1,0 +1,22 @@
+{
+  "name": "app-watch",
+  "version": "1.0.0",
+  "description": "应用监控，采集用户行为",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbldsz/app-watch.git"
+  },
+  "keywords": [
+    "watch"
+  ],
+  "author": "ld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gbldsz/app-watch/issues"
+  },
+  "homepage": "https://github.com/gbldsz/app-watch#readme"
+}
