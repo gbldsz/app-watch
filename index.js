@@ -2,7 +2,7 @@
  * @Description:
  * @Author: liu deng
  * @Date: 2019-08-11 17:00:46
- * @LastEditTime: 2019-08-11 22:18:28
+ * @LastEditTime: 2019-08-13 10:06:17
  * @LastEditors: liu deng
  */
 class appWatch {
@@ -84,7 +84,6 @@ class appWatch {
 
         that.updateRequest(id, item);
         that.addDoneReqList(id);
-        console.log(item);
         return _onreadystatechange.apply(XMLReq, arguments);
       };
       XMLReq.onreadystatechange = onreadystatechange;
@@ -203,7 +202,7 @@ class appWatch {
       return;
     }
     let currentReq = this.reqList[id];
-    if (currentReq.readyState === 4 && currentReq.status === 200) {
+    if (currentReq.readyState === 4) {
       this.doneReqList.push(currentReq);
       console.log(this.doneReqList);
     }
