@@ -2,7 +2,7 @@
  * @Description: 测试监控
  * @Author: liu deng
  * @Date: 2019-08-11 21:26:33
- * @LastEditTime: 2019-08-13 10:13:13
+ * @LastEditTime: 2019-09-17 19:32:34
  * @LastEditors: liu deng
  -->
 <!DOCTYPE html>
@@ -13,16 +13,19 @@
   <body>
     <button>点击测试</button>
   </body>
-  <script src="../index.js"></script>
+  <script src="../dist/bundle.js"></script>
   <script>
-   let hook = new appWatch();
-  </script>
-  <script>
+    new appWatch({
+      personId:'personid1',
+      appName:'jczy'
+    })
     let btn = document.querySelector('button');
     btn.onclick = function() {
       var req = new XMLHttpRequest();
       req.open('GET', 'http://quan.suning.com/getSysTime.do');
       req.send();
+      req.onload = function(){
+      }
     };
   </script>
 </html>

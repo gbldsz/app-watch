@@ -2,12 +2,20 @@
  * @Description:
  * @Author: liu deng
  * @Date: 2019-08-11 17:00:46
- * @LastEditTime: 2019-08-13 10:06:17
+ * @LastEditTime: 2019-09-17 19:31:27
  * @LastEditors: liu deng
  */
-class appWatch {
-  constructor(opt) {
+export default class netWork {
+  constructor(configs) {
+    this.initConfigs(configs);
     this.initNetWork();
+  }
+  // 初始化配置信息
+  initConfigs(configs) {
+    // 用户id
+    this.personId = configs.personId || '';
+    // 应用名称
+    this.appName = configs.appName || '';
   }
   // 初始化网络监控
   initNetWork() {
@@ -35,7 +43,9 @@ class appWatch {
       let _onreadystatechange = XMLReq.onreadystatechange || function() {};
       let onreadystatechange = function() {
         let item = that.reqList[id] || {};
-
+        // init user
+        item.personId = that.personId;
+        item.appName = that.appName;
         // update status
         item.readyState = XMLReq.readyState;
         item.status = 0;
@@ -194,6 +204,7 @@ class appWatch {
   isString(value) {
     return Object.prototype.toString.call(value) == '[object String]';
   }
+  // 添加完成记录
   addDoneReqList(id) {
     if (!Array.isArray(this.doneReqList)) {
       this.doneReqList = [];
@@ -203,10 +214,21 @@ class appWatch {
     }
     let currentReq = this.reqList[id];
     if (currentReq.readyState === 4) {
+      if (currentReq.url.indexOf('127.0.0.1:7001') >= 0) {
+        return;
+      }
       this.doneReqList.push(currentReq);
       console.log(this.doneReqList);
     }
   }
 }
 
+function isWindow(value) {
+  var toString = Object.prototype.toString.call(value);
+  return (
+    toString == '[object global]' ||
+    toString == '[object Window]' ||
+    toString == '[object DOMWindow]'
+  );
+}
 // export default appWatch;

@@ -2,9 +2,9 @@
   "name": "app-watch",
   "version": "1.0.0",
   "description": "应用监控，采集用户行为",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"webpack"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/gbldsz/app-watch/issues"
   },
-  "homepage": "https://github.com/gbldsz/app-watch#readme"
+  "homepage": "https://github.com/gbldsz/app-watch#readme",
+  "devDependencies": {
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8"
+  }
 }
