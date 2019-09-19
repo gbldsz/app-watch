@@ -1,5 +1,5 @@
 {
-  "name": "app-watch",
+  "name": "app-keep-watch",
   "version": "1.0.0",
   "description": "应用监控，采集用户行为",
   "scripts": {

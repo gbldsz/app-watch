@@ -2,7 +2,7 @@
  * @Description: 初始化监控
  * @Author: liu deng
  * @Date: 2019-09-17 11:11:51
- * @LastEditTime: 2019-09-17 19:31:49
+ * @LastEditTime: 2019-09-18 13:57:11
  * @LastEditors: liu deng
  */
 import netWork from './netWork';
@@ -16,7 +16,7 @@ class appWatch {
       if (netList && netList.length >= 1) {
         console.log(netList);
         var req = new XMLHttpRequest();
-        req.open('POST', 'http://127.0.0.1:7001');
+        req.open('POST', configs.logApi);
         req.setRequestHeader('Content-type', 'application/json');
         req.send(JSON.stringify({ data: netList }));
       }

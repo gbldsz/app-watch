@@ -2,7 +2,7 @@
  * @Description: 测试监控
  * @Author: liu deng
  * @Date: 2019-08-11 21:26:33
- * @LastEditTime: 2019-09-17 19:32:34
+ * @LastEditTime: 2019-09-18 13:56:57
  * @LastEditors: liu deng
  -->
 <!DOCTYPE html>
@@ -17,7 +17,8 @@
   <script>
     new appWatch({
       personId:'personid1',
-      appName:'jczy'
+      appName:'jczy',
+      logApi:'http://127.0.0.1:7001'
     })
     let btn = document.querySelector('button');
     btn.onclick = function() {

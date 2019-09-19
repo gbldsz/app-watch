@@ -2,7 +2,7 @@
  * @Description:
  * @Author: liu deng
  * @Date: 2019-08-11 17:00:46
- * @LastEditTime: 2019-09-17 19:31:27
+ * @LastEditTime: 2019-09-18 13:58:18
  * @LastEditors: liu deng
  */
 export default class netWork {
@@ -16,6 +16,8 @@ export default class netWork {
     this.personId = configs.personId || '';
     // 应用名称
     this.appName = configs.appName || '';
+    // 日志接口
+    this.logApi = configs.logApi || '';
   }
   // 初始化网络监控
   initNetWork() {
@@ -214,7 +216,7 @@ export default class netWork {
     }
     let currentReq = this.reqList[id];
     if (currentReq.readyState === 4) {
-      if (currentReq.url.indexOf('127.0.0.1:7001') >= 0) {
+      if (currentReq.url.indexOf(this.logApi) >= 0) {
         return;
       }
       this.doneReqList.push(currentReq);
